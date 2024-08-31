@@ -2,8 +2,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* ====================== Base ====================== */
+/* ==================== Layouts ===================== */
 /* ==================== Partials ==================== */
+header {
+  @apply bg-slate-200;
+}
+
+footer {
+  @apply bg-slate-200;
+}
+
+/* ====================== Auth ====================== */
+#signInSection1 {
+  @apply min-h-screen bg-slate-100;
+}
+#signInSection1 h1 {
+  @apply text-center text-slate-800 text-2xl pt-10;
+}
+
+#signUpSection1 {
+  @apply min-h-screen bg-slate-100;
+}
+#signUpSection1 h1 {
+  @apply text-center text-slate-800 text-2xl pt-10;
+}
+
 /* ===================== Pages ====================== */
 #homeSection1 {
   @apply min-h-screen bg-slate-100;
