@@ -1,7 +1,7 @@
 # Test
 
 This project is a simple **test** setup designed for learning and experimentation purposes. It includes a **RESTful API** built with **Express.js** and a frontend built with **Angular**, styled using **Tailwind CSS** and **Sass**.
-<br>
+<br><br>
 The goal is to create a foundation with **ready-to-use** modules (like login, signup, etc.) that can be reused in future projects. This repository serves as a base for **testing various features** and integrating different technologies effectively.
 
 ## Author
