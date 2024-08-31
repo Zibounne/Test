@@ -1,0 +1,13 @@
+/* ==================== Tailwind ==================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ====================== Base ====================== */
+/* ==================== Partials ==================== */
+/* ===================== Pages ====================== */
+#homeSection1 {
+  @apply min-h-screen bg-slate-100;
+}
+#homeSection1 h1 {
+  @apply text-center text-slate-800 text-2xl pt-10;
+}/*# sourceMappingURL=styles.css.map */
