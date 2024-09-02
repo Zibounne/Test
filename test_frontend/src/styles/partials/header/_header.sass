@@ -9,7 +9,29 @@
 // header
 
 header
-    @apply bg-slate-200
+    animation: translateYHeader 0.75s ease-out
+    @apply bg-slate-200 text-slate-800 py-2 text-xl font-bold
+    nav
+        @apply flex
+        ul
+            @apply flex
+            li
+                @apply pr-5 flex
+                button
+                    @apply transition-all duration-150 ease-in-out w-28
+                    i
+                        @apply pl-2
+                button:hover
+                    @apply border-b-slate-800 text-slate-800 transition-all duration-150 ease-in-out text-2xl
+                button.active
+                    @apply border-4 border-slate-800 bg-slate-800 rounded text-white
+
+#headerLogo
+    i
+        @apply text-4xl ml-5 mr-6
+
+#headerSignOut
+    @apply absolute right-0 pr-10 py-1
 
 ///////////////////////// Responsive ////////////////////////
 

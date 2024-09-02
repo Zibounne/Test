@@ -7,13 +7,19 @@
                 </div>
             </li>
             <li>
-                <a href="/">Home</a>
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/']">Home</a>
+                </button>
             </li>
             <li>
-                <a href="/signIn">Sign In</a>
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/signIn']">signIn</a>
+                </button>
             </li>
             <li>
-                <a href="/signUp">Sign Up</a>
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/signUp']">Home</a>
+                </button>
             </li>
         </ul>
     </nav>

@@ -1,7 +1,45 @@
 <app-header></app-header>
 
+<a href="/" id="signUpSection1Arrow">
+    <i class="fa-solid fa-arrow-left"></i>
+</a>
+
 <section id="signUpSection1">
-    <h1>Sign Up</h1>
+    <div id="signUpSection1Container">
+      <h1>Sign Up</h1>
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" formControlName="username" placeholder="username" required minlength="3" autocomplete="username"/>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" placeholder="email" required/>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" formControlName="password" placeholder="password" required minlength="6" autocomplete="new-password"/>
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm password</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="confirm password" required minlength="6" autocomplete="new-password"/>
+          </div>
+        <div>
+            <label for="firstname">Firstname</label>
+            <input type="text" id="firstname" formControlName="firstname" placeholder="firstname"/>
+          </div>
+        <div>
+            <label for="lastname">Lastname</label>
+            <input type="text" id="lastname" formControlName="lastname" placeholder="lastname"/>
+        </div>
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+        <button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
+        </form>
+        <p>
+            Already have an account ? <a href="/signIn">Sign In</a>
+        </p>
+    </div>
 </section>
 
 <app-footer></app-footer>

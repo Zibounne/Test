@@ -5,14 +5,12 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: '../styles/styles.css'
 })
 
 export class AppComponent {
-
-  title = 'Test';
 
 }

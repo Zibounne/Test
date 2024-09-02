@@ -1,7 +1,12 @@
 const express = require('express');
+const cors =  require('cors');
+const userRoutes = require('./routes/user.routes');
+
 const app = express();
 const port = 3000;
-const userRoutes = require('./routes/user.routes');
+
+// Corse
+app.use(cors());
 
 // Middleware for JSON requests
 app.use(express.json());
