@@ -13,12 +13,22 @@
             </li>
             <li>
                 <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <a [routerLink]="['/signIn']">signIn</a>
+                    <a [routerLink]="['/profile']">Profile</a>
                 </button>
             </li>
             <li>
                 <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <a [routerLink]="['/signUp']">Home</a>
+                    <a [routerLink]="['/signIn']">sign In</a>
+                </button>
+            </li>
+            <li>
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/signUp']">Sign Up</a>
+                </button>
+            </li>
+            <li id="headerSignOut">
+                <button routerLinkActive="active">
+                    <a [routerLink]="['/signOut']">Sign Out</a>
                 </button>
             </li>
         </ul>

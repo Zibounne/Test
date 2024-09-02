@@ -92,7 +92,11 @@ export class SignUpComponent {
         }, 2000);
       },
       error: (error) => {
-        this.errorMessage = 'There was an error! ' + error.error.message;
+        if (error.status === 409) {
+          this.errorMessage = 'Username or email already used';
+        } else {
+          this.errorMessage = 'An error occurred ! ' + error.error.message;
+        }
         this.successMessage = null;
       },
       complete: () => {
@@ -100,6 +104,36 @@ export class SignUpComponent {
       }
     });    
 
+  }
+
+  // Get username
+  get username() {
+    return this.signUpForm.get('username');
+  }
+
+  // Get email
+  get email() {
+    return this.signUpForm.get('email');
+  }
+
+  // Get password
+  get password() {
+    return this.signUpForm.get('password');
+  }
+
+  // Get confirmPassword
+  get confirmPassword() {
+    return this.signUpForm.get('confirmPassword');
+  }
+
+  // Get firstname
+  get firstname() {
+    return this.signUpForm.get('firstname');
+  }
+
+  // Get lastname
+  get lastname() {
+    return this.signUpForm.get('lastname');
   }
 
 }
