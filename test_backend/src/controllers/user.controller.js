@@ -5,7 +5,9 @@ exports.createUser = (req, res) => {
   const userData = {
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname
   };
 
   User.create(userData, (err, result) => {
