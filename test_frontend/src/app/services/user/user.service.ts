@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { User } from '../../models/user/user';
+import { SignInPayload } from '../../interfaces/user/signIn/sign-in-payload';
+import { SignUpPayload } from '../../interfaces/user/signUp/sign-up-payload';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,13 @@ export class UserService {
   //////////////////////// Methods ////////////////////////
 
   // Sign Up
-  signUp(user: User): Observable<any> {
-    return this.http.post(`${this.apiUrl}/create`, user);
+  signUp(payload: SignUpPayload): Observable<any> {
+    return this.http.post(`${this.apiUrl}/signUp`, payload);
+  }
+
+  // Sign In
+  signIn(payload: SignInPayload): Observable<any> {
+    return this.http.post(`${this.apiUrl}/signIn`, payload);
   }
 
 }

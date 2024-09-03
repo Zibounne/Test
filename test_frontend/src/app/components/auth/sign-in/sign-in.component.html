@@ -1,7 +1,34 @@
 <app-header></app-header>
 
+<a href="/" id="signInSection1Arrow">
+    <i class="fa-solid fa-arrow-left"></i>
+</a>
+
 <section id="signInSection1">
-    <h1>Sign In</h1>
+    <div id="signInSection1Container">
+        <h1>Sign In</h1>
+        <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" placeholder="email" required autocomplete="email">
+            <div *ngIf="signInForm.get('email')?.touched && signInForm.get('email')?.invalid" class="error-message">
+              <span *ngIf="signInForm.get('email')?.errors?.['required']">Email is required</span>
+              <span *ngIf="signInForm.get('email')?.errors?.['email']">Invalid email address</span>
+            </div>
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" placeholder="password" required minlength="6" autocomplete="new-password"/>
+            <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.invalid" class="error-message">
+              <span *ngIf="signInForm.get('password')?.errors?.['required']">Password is required</span>
+              <span *ngIf="signInForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</span>
+            </div>
+          </div>
+          <div *ngIf="errorMessage" class="font-bold error-message">{{ errorMessage }}</div>
+          <div *ngIf="successMessage" class="font-bold success-message">{{ successMessage }}</div>
+          <button type="submit" [disabled]="signInForm.invalid">Sign In</button>
+        </form>
+    </div>
 </section>
 
 <app-footer></app-footer>

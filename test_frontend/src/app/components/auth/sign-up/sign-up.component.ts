@@ -6,10 +6,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HeaderComponent } from '../../partials/header/header.component';
 import { FooterComponent } from '../../partials/footer/footer.component';
 
-import { User } from '../../../models/user/user';
-
 import { UserService } from '../../../services/user/user.service';
 import { Router } from '@angular/router';
+
+import { SignUpPayload } from '../../../interfaces/user/signUp/sign-up-payload';
 
 @Component({
   selector: 'app-sign-up',
@@ -72,7 +72,7 @@ export class SignUpComponent {
       return;
     }
 
-    const user: User = {
+    const payload: SignUpPayload = {
       username: this.signUpForm.value.username,
       email: this.signUpForm.value.email,
       password: this.signUpForm.value.password,
@@ -81,8 +81,7 @@ export class SignUpComponent {
       lastname: this.signUpForm.value.lastname
     };
 
-
-    this.userService.signUp(user).subscribe({
+    this.userService.signUp(payload).subscribe({
       next: (response) => {
         this.successMessage = 'User registered successfully';
         this.errorMessage = null;
@@ -102,38 +101,8 @@ export class SignUpComponent {
       complete: () => {
         console.log('User registration completed.');
       }
-    });    
+    });   
 
-  }
-
-  // Get username
-  get username() {
-    return this.signUpForm.get('username');
-  }
-
-  // Get email
-  get email() {
-    return this.signUpForm.get('email');
-  }
-
-  // Get password
-  get password() {
-    return this.signUpForm.get('password');
-  }
-
-  // Get confirmPassword
-  get confirmPassword() {
-    return this.signUpForm.get('confirmPassword');
-  }
-
-  // Get firstname
-  get firstname() {
-    return this.signUpForm.get('firstname');
-  }
-
-  // Get lastname
-  get lastname() {
-    return this.signUpForm.get('lastname');
   }
 
 }

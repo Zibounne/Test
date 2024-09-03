@@ -1,6 +1,6 @@
-const db = require('../config/db.config');
+const db = require('../../config/db.config');
 
-async function checkUserExists(req, res, next) {
+async function checkUserExistsMiddleware(req, res, next) {
 
     const { username, email } = req.body;
 
@@ -20,4 +20,4 @@ async function checkUserExists(req, res, next) {
     
 }
 
-module.exports = checkUserExists;
+module.exports = checkUserExistsMiddleware;

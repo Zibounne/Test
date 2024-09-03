@@ -11,34 +11,34 @@
         <div>
           <label for="username">Username</label>
           <input type="text" id="username" formControlName="username" placeholder="username" required minlength="3" autocomplete="username"/>
-          <div *ngIf="username?.touched && username?.invalid" class="error-message">
-            <span *ngIf="username?.errors?.['required']">Username is required</span>
-            <span *ngIf="username?.errors?.['minlength']">Username must be at least 3 characters</span>
+          <div *ngIf="signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid" class="error-message">
+            <span *ngIf="signUpForm.get('username')?.errors?.['required']">Username is required</span>
+            <span *ngIf="signUpForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters</span>
           </div>
         </div>
         <div>
           <label for="email">Email</label>
           <input type="email" id="email" formControlName="email" placeholder="email" required/>
-          <div *ngIf="email?.touched && email?.invalid" class="error-message">
-            <span *ngIf="email?.errors?.['required']">Email is required</span>
-            <span *ngIf="email?.errors?.['email']">Invalid email address</span>
+          <div *ngIf="signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid" class="error-message">
+            <span *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required</span>
+            <span *ngIf="signUpForm.get('email')?.errors?.['email']">Invalid email address</span>
           </div>
         </div>
         <div>
           <label for="password">Password</label>
           <input type="password" id="password" formControlName="password" placeholder="password" required minlength="6" autocomplete="new-password"/>
-          <div *ngIf="password?.touched && password?.invalid" class="error-message">
-            <span *ngIf="password?.errors?.['required']">Password is required</span>
-            <span *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters</span>
+          <div *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid" class="error-message">
+            <span *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required</span>
+            <span *ngIf="signUpForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</span>
             <span *ngIf="signUpForm.errors?.['notMatching']">Passwords do not match</span>
           </div>
         </div>
         <div>
             <label for="confirmPassword">Confirm password</label>
             <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="confirm password" required minlength="6" autocomplete="new-password"/>
-            <div *ngIf="confirmPassword?.touched && confirmPassword?.invalid" class="error-message">
-                <span *ngIf="confirmPassword?.errors?.['required']">Confirm password is required</span>
-                <span *ngIf="confirmPassword?.errors?.['minlength']">Password must be at least 6 characters</span>
+            <div *ngIf="signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.invalid" class="error-message">
+                <span *ngIf="signUpForm.get('confirmPassword')?.errors?.['required']">Confirm password is required</span>
+                <span *ngIf="signUpForm.get('confirmPassword')?.errors?.['minlength']">Password must be at least 6 characters</span>
                 <span *ngIf="signUpForm.errors?.['notMatching']">Passwords do not match</span>
             </div>
         </div>
@@ -50,8 +50,8 @@
             <label for="lastname">Lastname</label>
             <input type="text" id="lastname" formControlName="lastname" placeholder="lastname"/>
         </div>
-        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-        <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="font-bold error-message">{{ errorMessage }}</div>
+        <div *ngIf="successMessage" class="font-bold success-message">{{ successMessage }}</div>
         <button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
         </form>
         <p>
