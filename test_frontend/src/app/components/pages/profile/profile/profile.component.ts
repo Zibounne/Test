@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from '../../../partials/header/header.component';
 import { FooterComponent } from '../../../partials/footer/footer.component';
+
 import { ProfilePayload } from '../../../../interfaces/user/profile/profile-payload';
+
 import { UserService } from '../../../../services/user/user.service';
-import { AuthGuardService } from '../../../../services/auth/auth-guard.service';
+import { AuthGuardService } from '../../../../services/auth/user/auth-guard.service';
 
 @Component({
   selector: 'app-profile',

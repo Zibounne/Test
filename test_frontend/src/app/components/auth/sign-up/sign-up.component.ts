@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { HeaderComponent } from '../../partials/header/header.component';
 import { FooterComponent } from '../../partials/footer/footer.component';
 
 import { UserService } from '../../../services/user/user.service';
-import { Router } from '@angular/router';
 
 import { SignUpPayload } from '../../../interfaces/user/signUp/sign-up-payload';
 
@@ -43,10 +43,26 @@ export class SignUpComponent {
   {
     this.signUpForm = this.fb.group
     ({
-    username: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
-    confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
+    username: ['',
+    [
+      Validators.required, 
+      Validators.minLength(3)
+    ]],
+    email: ['',
+    [
+      Validators.required,
+      Validators.email
+    ]],
+    password: ['',
+    [
+      Validators.required,
+      Validators.minLength(6)
+    ]],
+    confirmPassword: ['', 
+    [
+      Validators.required,
+      Validators.minLength(6)
+    ]],
     firstname: [''],
     lastname: ['']
     });

@@ -8,6 +8,7 @@ import { HeaderComponent } from '../../partials/header/header.component';
 import { FooterComponent } from '../../partials/footer/footer.component';
 
 import { UserService } from '../../../services/user/user.service';
+
 import { SignInPayload } from '../../../interfaces/user/signIn/sign-in-payload';
 
 @Component({

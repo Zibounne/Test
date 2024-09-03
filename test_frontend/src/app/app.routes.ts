@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 
+import { AuthGuardService } from './services/auth/user/auth-guard.service';
+import { NoAuthGuardService } from './services/auth/guest/no-auth-guard.service';
+
 import { HomeComponent } from './components/pages/home/home.component';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
@@ -7,12 +10,17 @@ import { ProfileComponent } from './components/pages/profile/profile/profile.com
 import { SignOutComponent } from './components/auth/sign-out/sign-out.component';
 
 export const routes: Routes = [
+    // Public routes
     { path: '', component: HomeComponent },
-    { path: 'signIn', component: SignInComponent },
-    { path: 'signUp', component: SignUpComponent },
-    { path: 'signOut', component: SignOutComponent },
-    { path: 'profile', component: ProfileComponent },
+    
+    // Non-authenticated routes
+    { path: 'signIn', component: SignInComponent, canActivate: [NoAuthGuardService] },
+    { path: 'signUp', component: SignUpComponent, canActivate: [NoAuthGuardService] },
 
-    // Other routes
+    // Authenticated routes
+    { path: 'signOut', component: SignOutComponent, canActivate: [AuthGuardService] },
+    { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
+
+    // Fallback route
     { path: '**', component: HomeComponent },
 ];

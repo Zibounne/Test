@@ -1,34 +1,41 @@
 <header id="header">
     <nav>
         <ul>
+            <!-- Logo -->
             <li>
                 <div id="headerLogo">
-                    <i class="fa-solid fa-vial"></i>
+                <i class="fa-solid fa-vial"></i>
                 </div>
             </li>
+
+            <!-- Home -->
             <li>
                 <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <a [routerLink]="['/']">Home</a>
+                <a [routerLink]="['/']">Home</a>
                 </button>
             </li>
-            <li>
+
+            <!-- Authenticated -->
+            <li *ngIf="isAuthenticated">
                 <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                     <a [routerLink]="['/profile']">Profile</a>
                 </button>
             </li>
-            <li>
-                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <a [routerLink]="['/signIn']">sign In</a>
-                </button>
-            </li>
-            <li>
-                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <a [routerLink]="['/signUp']">Sign Up</a>
-                </button>
-            </li>
-            <li id="headerSignOut">
+            <li *ngIf="isAuthenticated" id="headerSignOut">
                 <button routerLinkActive="active">
                     <a [routerLink]="['/signOut']">Sign Out</a>
+                </button>
+            </li>
+
+            <!-- Not authenticated -->
+            <li *ngIf="!isAuthenticated">
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/signIn']">Sign In</a>
+                </button>
+            </li>
+            <li *ngIf="!isAuthenticated">
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/signUp']">Sign Up</a>
                 </button>
             </li>
         </ul>
