@@ -8,6 +8,8 @@ export class User {
     public confirmPassword: string;
     public firstname: string;
     public lastname: string;
+    public createdAt: Date;
+    public updatedAt: Date;
 
     ////////////////////// Constructor //////////////////////
 
@@ -19,6 +21,8 @@ export class User {
         confirmPassword: string = "",
         firstname: string = "",
         lastname: string = "",
+        createdAt: Date,
+        updatedAt: Date,
     )
     {
         this.username = username;
@@ -27,6 +31,8 @@ export class User {
         this.confirmPassword = confirmPassword;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     //////////////////////// Methods ////////////////////////

@@ -34,6 +34,16 @@ const User = {
       }
       callback(null, result[0]);
     });
+  },
+
+  findById: (id, callback) => {
+    const query = 'SELECT id, username, email, firstname, lastname, created_at as createdAt, updated_at as updatedAt FROM users WHERE id = ?';
+    db.query(query, [id], (err, result) => {
+      if (err) {
+        return callback(err);
+      }
+      callback(null, result[0]);
+    });
   }
 
 };

@@ -19,4 +19,8 @@ export class AuthGuardService implements CanActivate {
     }
   }
 
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from '../../../services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-out',
@@ -8,5 +10,37 @@ import { Component } from '@angular/core';
 })
 
 export class SignOutComponent {
+
+  /////////////////////// Property ////////////////////////
+
+  errorMessage: string | null = null;
+
+  ////////////////////// Constructor //////////////////////
+ 
+  constructor
+  (
+    private userService: UserService,
+    private router: Router
+  ) { }
+
+  //////////////////////// Methods ////////////////////////
+
+  // Init
+  ngOnInit(): void {
+    this.signOut();
+  }
+
+  // Sign Out
+  signOut(): void {
+    this.userService.signOut().subscribe({
+      next: (response) => {
+        localStorage.removeItem('token');
+        this.router.navigate(['/signIn']);
+      },
+      error: (error) => {
+        this.errorMessage = 'Failed to sign out. ' + error.message;
+      }
+    });
+  }
 
 }
