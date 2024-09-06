@@ -10,13 +10,12 @@ export class NoAuthGuardService implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      return true;
-    } else {
+    if (typeof window !== 'undefined' && localStorage.getItem('token')) {
       this.router.navigate(['/profile']);
       return false;
+    } else {
+      return true;
     }
-  }
+  }  
 
 }

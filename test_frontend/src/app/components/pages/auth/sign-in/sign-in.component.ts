@@ -4,12 +4,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
-import { HeaderComponent } from '../../partials/header/header.component';
-import { FooterComponent } from '../../partials/footer/footer.component';
+import { FooterComponent } from '../../../partials/footer/footer.component';
+import { HeaderComponent } from '../../../partials/header/header.component';
 
-import { UserService } from '../../../services/user/user.service';
+import { UserService } from '../../../../services/user/user.service';
 
-import { SignInPayload } from '../../../interfaces/user/signIn/sign-in-payload';
+import { SignInPayload } from '../../../../interfaces/user/signIn/sign-in-payload';
 
 @Component({
   selector: 'app-sign-in',

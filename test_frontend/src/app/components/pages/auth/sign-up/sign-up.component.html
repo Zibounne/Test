@@ -9,7 +9,7 @@
       <h1>Sign Up</h1>
       <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
         <div>
-          <label for="username">Username</label>
+          <label for="username">Username <span class="text-red-500">*</span></label>
           <input type="text" id="username" formControlName="username" placeholder="username" required minlength="3" autocomplete="username"/>
           <div *ngIf="signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid" class="error-message">
             <span *ngIf="signUpForm.get('username')?.errors?.['required']">Username is required</span>
@@ -17,7 +17,7 @@
           </div>
         </div>
         <div>
-          <label for="email">Email</label>
+          <label for="email">Email <span class="text-red-500">*</span></label>
           <input type="email" id="email" formControlName="email" placeholder="email" required/>
           <div *ngIf="signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid" class="error-message">
             <span *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required</span>
@@ -25,7 +25,7 @@
           </div>
         </div>
         <div>
-          <label for="password">Password</label>
+          <label for="password">Password <span class="text-red-500">*</span></label>
           <input type="password" id="password" formControlName="password" placeholder="password" required minlength="6" autocomplete="new-password"/>
           <div *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid" class="error-message">
             <span *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required</span>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div>
-            <label for="confirmPassword">Confirm password</label>
+            <label for="confirmPassword">Confirm password <span class="text-red-500">*</span></label>
             <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="confirm password" required minlength="6" autocomplete="new-password"/>
             <div *ngIf="signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.invalid" class="error-message">
               <span *ngIf="signUpForm.get('confirmPassword')?.errors?.['required']">Confirm password is required</span>

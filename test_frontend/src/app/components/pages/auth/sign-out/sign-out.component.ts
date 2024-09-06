@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { UserService } from '../../../services/user/user.service';
+import { UserService } from '../../../../services/user/user.service';
 
 @Component({
   selector: 'app-sign-out',

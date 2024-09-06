@@ -7,4 +7,4 @@ export interface SignUpPayload {
     confirmPassword: string;
     firstname: string;
     lastname: string;
-}  
+}

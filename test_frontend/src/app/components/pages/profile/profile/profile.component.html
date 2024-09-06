@@ -11,12 +11,13 @@
         <p><span class="font-bold">Email:</span> {{ user?.email }}</p>
         <p><span class="font-bold">First Name:</span> {{ user?.firstname }}</p>
         <p><span class="font-bold">Last Name:</span> {{ user?.lastname }}</p>
+        <p><span class="font-bold">Role:</span> {{ user?.role }}</p>
       </div>
 
       <div class="p-4 rounded-lg shadow bg-gray-50">
         <h2 class="mb-2 text-xl font-semibold">Account Details</h2>
-        <p><span class="font-bold">Created At:</span> {{ user?.createdAt | date:'long' }}</p>
-        <p><span class="font-bold">Updated At:</span> {{ user?.updatedAt | date:'long' }}</p>
+        <p><span class="font-bold">Created At:</span> {{ user?.createdAt | date:'dd/MM/yyyy HH:mm' }}</p>
+        <p><span class="font-bold">Updated At:</span> {{ user?.updatedAt | date:'dd/MM/yyyy HH:mm' }}</p>
       </div>
     </div>
 

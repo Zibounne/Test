@@ -10,6 +10,7 @@ export class User {
     public lastname: string;
     public createdAt: Date;
     public updatedAt: Date;
+    public role: string;
 
     ////////////////////// Constructor //////////////////////
 
@@ -23,6 +24,7 @@ export class User {
         lastname: string = "",
         createdAt: Date,
         updatedAt: Date,
+        role: string
     )
     {
         this.username = username;
@@ -33,6 +35,7 @@ export class User {
         this.lastname = lastname;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.role = role;
     }
 
     //////////////////////// Methods ////////////////////////

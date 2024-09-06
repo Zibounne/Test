@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { HeaderComponent } from '../../partials/header/header.component';
-import { FooterComponent } from '../../partials/footer/footer.component';
+import { HeaderComponent } from '../../../partials/header/header.component';
+import { FooterComponent } from '../../../partials/footer/footer.component';
 
-import { UserService } from '../../../services/user/user.service';
+import { UserService } from '../../../../services/user/user.service';
 
-import { SignUpPayload } from '../../../interfaces/user/signUp/sign-up-payload';
+import { SignUpPayload } from '../../../../interfaces/user/signUp/sign-up-payload';
 
 @Component({
   selector: 'app-sign-up',
@@ -64,7 +64,7 @@ export class SignUpComponent {
       Validators.minLength(6)
     ]],
     firstname: [''],
-    lastname: ['']
+    lastname: [''],
     });
   }
 
@@ -94,7 +94,7 @@ export class SignUpComponent {
       password: this.signUpForm.value.password,
       confirmPassword: this.signUpForm.value.confirmPassword,
       firstname: this.signUpForm.value.firstname,
-      lastname: this.signUpForm.value.lastname
+      lastname: this.signUpForm.value.lastname,
     };
 
     this.userService.signUp(payload).subscribe({

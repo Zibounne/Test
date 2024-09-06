@@ -7,4 +7,5 @@ export interface ProfilePayload {
     lastname: string;
     createdAt: Date;
     updatedAt: Date;
+    role: string;
 }

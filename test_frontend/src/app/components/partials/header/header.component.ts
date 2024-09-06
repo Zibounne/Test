@@ -31,8 +31,12 @@ export class HeaderComponent implements OnInit {
   
   // Check authentication status
   checkAuthentication(): void {
-    const token = localStorage.getItem('token');
-    this.isAuthenticated = !!token;
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('token');
+      this.isAuthenticated = !!token;
+    } else {
+      this.isAuthenticated = false;
+    }
   }
 
 }

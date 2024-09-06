@@ -4,10 +4,10 @@ import { AuthGuardService } from './services/auth/user/auth-guard.service';
 import { NoAuthGuardService } from './services/auth/guest/no-auth-guard.service';
 
 import { HomeComponent } from './components/pages/home/home.component';
-import { SignInComponent } from './components/auth/sign-in/sign-in.component';
-import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { ProfileComponent } from './components/pages/profile/profile/profile.component';
-import { SignOutComponent } from './components/auth/sign-out/sign-out.component';
+import { SignInComponent } from './components/pages/auth/sign-in/sign-in.component';
+import { SignUpComponent } from './components/pages/auth/sign-up/sign-up.component';
+import { SignOutComponent } from './components/pages/auth/sign-out/sign-out.component';
 
 export const routes: Routes = [
     // Public routes
