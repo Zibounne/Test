@@ -52,7 +52,7 @@ export class SignInComponent {
 
   // Init
   ngOnInit(): void {
-    this.titleService.setTitle("Test | Sign In");
+    this.titleService.setTitle("Blog | Sign In");
   }
 
   // Method | Sign In

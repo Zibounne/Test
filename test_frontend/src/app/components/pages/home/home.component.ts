@@ -21,7 +21,7 @@ export class HomeComponent {
 
   // Init
   ngOnInit(): void {
-    this.titleService.setTitle("Test | Home");
+    this.titleService.setTitle("Blog | Home");
   }
 
 }

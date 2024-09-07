@@ -72,7 +72,7 @@ export class SignUpComponent {
 
   // Init
   ngOnInit(): void {
-    this.titleService.setTitle("Test | Sign Up");
+    this.titleService.setTitle("Blog | Sign Up");
   }
 
   // Method | Sign Up

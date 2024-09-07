@@ -42,7 +42,7 @@ export class ProfileComponent {
 
   // Init
   ngOnInit(): void {
-    this.titleService.setTitle("Test | Profile");
+    this.titleService.setTitle("Blog | Profile");
     this.loadUserProfile();
   }
 

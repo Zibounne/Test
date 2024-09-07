@@ -4,21 +4,24 @@
             <!-- Logo -->
             <li>
                 <div id="headerLogo">
-                <i class="fa-solid fa-vial"></i>
+                    <i class="fa-brands fa-blogger-b"></i>
                 </div>
-            </li>
-
-            <!-- Home -->
-            <li>
-                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                <a [routerLink]="['/']">Home</a>
-                </button>
             </li>
 
             <!-- Authenticated -->
             <li *ngIf="isAuthenticated">
                 <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/']">Home</a>
+                </button>
+            </li>
+            <li *ngIf="isAuthenticated">
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                     <a [routerLink]="['/profile']">Profile</a>
+                </button>
+            </li>
+            <li *ngIf="isAuthenticated">
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a [routerLink]="['/articles']">Articles</a>
                 </button>
             </li>
             <li *ngIf="isAuthenticated" id="headerSignOut">
@@ -28,16 +31,7 @@
             </li>
 
             <!-- Not authenticated -->
-            <li *ngIf="!isAuthenticated">
-                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <a [routerLink]="['/signIn']">Sign In</a>
-                </button>
-            </li>
-            <li *ngIf="!isAuthenticated">
-                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <a [routerLink]="['/signUp']">Sign Up</a>
-                </button>
-            </li>
+
         </ul>
     </nav>
 </header>

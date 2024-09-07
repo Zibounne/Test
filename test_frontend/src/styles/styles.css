@@ -31,7 +31,7 @@ header nav ul li button.active {
 }
 
 #headerLogo i {
-  @apply text-4xl ml-5 mr-6;
+  @apply text-4xl ml-6 mr-6;
 }
 
 #headerSignOut {
@@ -224,6 +224,10 @@ footer p span {
     opacity: 1;
   }
 }
+.textReveal-Animation {
+  animation: reveal 1s ease-in-out;
+}
+
 #welcomeSection1 {
   background: linear-gradient(-45deg, rgba(30, 41, 59, 0.8), rgb(40, 50, 72), rgba(50, 60, 85, 0.8), rgb(60, 70, 98));
   background-size: 200% 200%;
@@ -248,5 +252,10 @@ footer p span {
 
 /* ========== Profile ========= */
 #profileSection1 {
+  @apply min-h-screen bg-slate-100;
+}
+
+/* ========== Articles ========= */
+#categorySection1 {
   @apply min-h-screen bg-slate-100;
 }/*# sourceMappingURL=styles.css.map */
