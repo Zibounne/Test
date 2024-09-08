@@ -257,5 +257,38 @@ footer p span {
 
 /* ========== Articles ========= */
 #categorySection1 {
-  @apply min-h-screen bg-slate-100;
+  @apply min-h-screen bg-slate-100 px-[20%] py-8;
+}
+#categorySection1 div {
+  @apply container;
+}
+#categorySection1 div h1 {
+  @apply mb-6 text-3xl font-bold text-slate-800;
+}
+#categorySection1 div ul {
+  @apply space-y-6;
+}
+#categorySection1 div ul li a {
+  @apply block text-white rounded-lg bg-slate-800 transition-all duration-150 ease-in-out border-x-2 border-b-2 border-t-4 border-slate-950 shadow-2xl;
+}
+#categorySection1 div ul li a:hover {
+  @apply opacity-90 transition-all duration-150 ease-in-out scale-105;
+}
+#categorySection1 div ul li div {
+  @apply flex items-center justify-between p-4;
+}
+#categorySection1 div ul li div img {
+  @apply h-12 mr-4;
+}
+#categorySection1 div ul li div h2 {
+  @apply flex-grow text-xl font-semibold;
+}
+#categorySection1 div ul li div p {
+  @apply flex-grow text-sm text-gray-300 w-3/4;
+}
+#categorySection1 #categorySection1NewCategory a {
+  @apply duration-150 ease-in-out shadow-2xl w-[50%] block m-auto px-4 py-2 text-2xl text-white transition-colors rounded-md bg-slate-500;
+}
+#categorySection1 #categorySection1NewCategory a:hover {
+  @apply opacity-90 transition-all duration-150 ease-in-out scale-105 bg-slate-600;
 }/*# sourceMappingURL=styles.css.map */

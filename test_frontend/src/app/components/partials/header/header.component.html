@@ -21,7 +21,7 @@
             </li>
             <li *ngIf="isAuthenticated">
                 <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <a [routerLink]="['/articles']">Articles</a>
+                    <a [routerLink]="['/categoryList']">Articles</a>
                 </button>
             </li>
             <li *ngIf="isAuthenticated" id="headerSignOut">

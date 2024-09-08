@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<section id="categorySection1">
+  <div>
+    <h1>Categories</h1>
+    <ul>
+      <li *ngFor="let category of categories">
+        <a [routerLink]="['/articles', category.title]">
+          <div>
+            <!-- Logo -->
+            <!-- <img [src]="'/pictures/articles/' + category.title + '/' + category.logo" alt="Logo" *ngIf="category.logo"/> -->
+            
+            <!-- Title -->
+            <h2>{{ category.title }}</h2>
+
+            <!-- Description -->
+            <p>{{ category.description }}</p>
+            
+            <!-- Arrow -->
+            <span class="ml-5 text-xl">
+              <i class="fa-solid fa-chevron-right"></i>
+            </span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div id="categorySection1NewCategory" class="my-10 mb-4 text-center">
+    <a [routerLink]="['/categoryForm']">
+      Add New Category
+    </a>
+  </div>
+</section>
+
+<app-footer></app-footer>

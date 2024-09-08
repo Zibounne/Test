@@ -2,6 +2,21 @@
 =              note Test | Front-End                 =
 ======================================================
 
-- 
+-   categories = [
+    { 
+      id: 1,
+      name: 'Web Development',
+      route: 'webDevelopment',
+      logo: 'articlesWebDevelopmentLogo.svg',
+      description: 'Explore the latest in web development, from front-end programming to back-end technologies. Learn about modern frameworks, responsive techniques, and best practices for creating dynamic, user-friendly websites.'
+    },
+    { id: 2, name: 'Programming Design & User Experience', route: 'programmingDesign&UserExperience' },
+    { id: 3, name: 'Mobile & Web Apps', route: 'mobile&WebApps' },
+    { id: 4, name: 'SEO & Digital Marketing', route: 'Seo&DigitalMarketing' },
+    { id: 5, name: 'Projects & Management', route: 'projects&Management' },
+    { id: 6, name: 'Artificial Intelligence & Machine Learning', route: 'artificialIntelligence&MachineLearning' },
+    { id: 7, name: 'Security & Privacy', route: 'security&Privacy' },
+    { id: 8, name: 'Tech Trends & News', route: 'techTrends&News' }
+  ];
 
 ======================================================
