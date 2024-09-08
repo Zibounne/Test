@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+<section id="categoryEditSection">
+  <div class="p-4">
+    <h1 class="mb-4 text-2xl font-bold">Edit Category</h1>
+
+    <form [formGroup]="categoryForm" (ngSubmit)="submitCategory()" class="max-w-lg mx-auto">
+      <!-- Title Field -->
+      <div class="mb-4">
+        <label for="title" class="block mb-2 text-lg font-medium">Title</label>
+        <input
+          id="title"
+          formControlName="title"
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded"
+          placeholder="Enter category title"
+        />
+        <div *ngIf="categoryForm.get('title')?.invalid && categoryForm.get('title')?.touched" class="mt-1 text-sm text-red-500">
+          <div *ngIf="categoryForm.get('title')?.errors?.['required']">Title is required.</div>
+          <div *ngIf="categoryForm.get('title')?.errors?.['minlength']">Title must be at least 3 characters long.</div>
+        </div>
+      </div>
+
+      <!-- Description Field -->
+      <div class="mb-4">
+        <label for="description" class="block mb-2 text-lg font-medium">Description</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          rows="4"
+          class="w-full p-2 border border-gray-300 rounded"
+          placeholder="Enter category description"
+        ></textarea>
+        <div *ngIf="categoryForm.get('description')?.invalid && categoryForm.get('description')?.touched" class="mt-1 text-sm text-red-500">
+          <div *ngIf="categoryForm.get('description')?.errors?.['required']">Description is required.</div>
+          <div *ngIf="categoryForm.get('description')?.errors?.['minlength']">Description must be at least 50 characters long.</div>
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="mb-4 text-red-500">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Success Message -->
+      <div *ngIf="successMessage" class="mb-4 text-green-500">
+        {{ successMessage }}
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="w-full p-2 text-white bg-blue-500 rounded"
+        [disabled]="categoryForm.invalid"
+      >
+        Update Category
+      </button>
+    </form>
+  </div>
+</section>
+
+<app-footer></app-footer>

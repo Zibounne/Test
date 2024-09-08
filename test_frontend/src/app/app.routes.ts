@@ -9,8 +9,9 @@ import { SignInComponent } from './components/pages/auth/sign-in/sign-in.compone
 import { SignUpComponent } from './components/pages/auth/sign-up/sign-up.component';
 import { SignOutComponent } from './components/pages/auth/sign-out/sign-out.component';
 import { ProfileComponent } from './components/pages/profile/profile/profile.component';
-import { CategoryListComponent } from './components/pages/articles/category/category-list.component';
+import { CategoryListComponent } from './components/pages/articles/category-list/category-list.component';
 import { CategoryFormComponent } from './components/pages/articles/category-form/category-form.component';
+import { CategoryEditComponent } from './components/pages/articles/category-edit/category-edit.component';
 
 export const routes: Routes = [
     // Public routes
@@ -27,6 +28,7 @@ export const routes: Routes = [
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
     { path: 'categoryList', component: CategoryListComponent, canActivate: [AuthGuardService] },
     { path: 'categoryForm', component: CategoryFormComponent, canActivate: [AuthGuardService] },
+    { path: 'categoryEdit/:id', component: CategoryEditComponent, canActivate: [AuthGuardService] },
 
     // Fallback route
     { path: '**', component: HomeComponent },

@@ -5,7 +5,15 @@
     <h1>Categories</h1>
     <ul>
       <li *ngFor="let category of categories">
-        <a [routerLink]="['/articles', category.title]">
+        <!-- Delete Button -->
+        <button (click)="deleteCategory($event, category.id)" class="pr-2 text-red-600 hover:text-red-800">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+        <!-- Edit Button -->
+        <button (click)="editCategory(category.id)" class="text-blue-600 hover:text-blue-800 edit-button">
+          <i class="fa-solid fa-edit"></i>
+        </button>
+        <a [routerLink]="['/category', category.title]">
           <div>
             <!-- Logo -->
             <!-- <img [src]="'/pictures/articles/' + category.title + '/' + category.logo" alt="Logo" *ngIf="category.logo"/> -->

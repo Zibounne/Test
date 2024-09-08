@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 import { HeaderComponent } from '../../../partials/header/header.component';
 import { FooterComponent } from '../../../partials/footer/footer.component';
+
 import { CategoryService } from '../../../../services/category/category.service';
+
 import { CategoryListPayload } from '../../../../interfaces/category/category-list/category-list';
 
 @Component({
@@ -32,6 +34,7 @@ export class CategoryListComponent implements OnInit {
 
   constructor(
     private titleService: Title,
+    private router: Router,
     private categoryService: CategoryService
   ) {}
 
@@ -59,6 +62,25 @@ export class CategoryListComponent implements OnInit {
       }
     });
   }
-  
+
+  deleteCategory(event: MouseEvent, categoryId: string): void {
+    event.stopPropagation();
+
+    if (confirm('Are you sure you want to delete this category?')) {
+      this.categoryService.deleteCategory(categoryId).subscribe({
+        next: () => {
+          this.successMessage = 'Category deleted successfully.';
+          this.loadCategories();
+        },
+        error: (error) => {
+          this.errorMessage = 'Failed to delete category.';
+        }
+      });
+    }
+  }
+
+  editCategory(categoryId: string): void {
+    this.router.navigate(['/categoryEdit', categoryId]);
+  }
 
 }
