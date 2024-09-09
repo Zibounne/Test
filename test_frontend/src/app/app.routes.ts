@@ -12,6 +12,8 @@ import { ProfileComponent } from './components/pages/profile/profile/profile.com
 import { CategoryListComponent } from './components/pages/articles/category-list/category-list.component';
 import { CategoryFormComponent } from './components/pages/articles/category-form/category-form.component';
 import { CategoryEditComponent } from './components/pages/articles/category-edit/category-edit.component';
+import { ArticleFormComponent } from './components/pages/articles/article-form/article-form.component';
+import { ArticleListComponent } from './components/pages/articles/article-list/article-list.component';
 
 export const routes: Routes = [
     // Public routes
@@ -29,6 +31,8 @@ export const routes: Routes = [
     { path: 'categoryList', component: CategoryListComponent, canActivate: [AuthGuardService] },
     { path: 'categoryForm', component: CategoryFormComponent, canActivate: [AuthGuardService] },
     { path: 'categoryEdit/:id', component: CategoryEditComponent, canActivate: [AuthGuardService] },
+    { path: 'articleForm', component: ArticleFormComponent, canActivate: [AuthGuardService] },
+    { path: 'category/:id', component: ArticleListComponent },
 
     // Fallback route
     { path: '**', component: HomeComponent },

@@ -20,7 +20,7 @@
                 </button>
             </li>
             <li *ngIf="isAuthenticated">
-                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
                     <a [routerLink]="['/categoryList']">Articles</a>
                 </button>
             </li>

@@ -1,0 +1,88 @@
+<app-header></app-header>
+
+<a href="/categoryList" id="articleFormSection1Arrow">
+  <i class="fa-solid fa-arrow-left"></i>
+</a>
+
+<section id="articleFormSection1">
+  <h1>Create New Article</h1>
+  <div id="articleFormContentSection1">
+    <form [formGroup]="articleForm" (ngSubmit)="submitArticle()">
+      <!-- Title Field -->
+      <div>
+        <label for="title">Title</label>
+        <input
+          id="title"
+          formControlName="title"
+          type="text"
+          class="focus:outline-none focus:border-slate-500"
+          placeholder="Enter article title"
+        />
+        <div *ngIf="articleForm.get('title')?.invalid && articleForm.get('title')?.touched">
+          <div *ngIf="articleForm.get('title')?.errors?.['required']">Title is required.</div>
+          <div *ngIf="articleForm.get('title')?.errors?.['minlength']">Title must be at least 5 characters long.</div>
+        </div>
+      </div>
+      
+      <!-- Description Field -->
+      <div>
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          rows="4"
+          class="focus:outline-none focus:border-slate-500"
+          placeholder="Enter article description"
+        ></textarea>
+        <div *ngIf="articleForm.get('description')?.invalid && articleForm.get('description')?.touched">
+          <div *ngIf="articleForm.get('description')?.errors?.['required']">Description is required.</div>
+          <div *ngIf="articleForm.get('description')?.errors?.['minlength']">Description must be at least 100 characters long.</div>
+        </div>
+      </div>
+      
+      <!-- Category Selection -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Categories</label>
+        <div class="grid grid-cols-1 gap-4 mt-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div *ngFor="let category of categories" class="relative">
+            <button
+              type="button"
+              (click)="toggleCategory(category.id)"
+              [ngClass]="{
+                'bg-slate-950 text-white border-slate-950 border-4': isSelected(category.id),
+                'bg-white text-gray-900 border-gray-300': !isSelected(category.id)
+              }"
+              class="flex items-center justify-center w-full h-32 text-center transition-colors duration-300 border rounded-md shadow-sm focus:outline-none"
+            >
+              {{ category.title }}
+            </button>
+          </div>
+        </div>
+        <div *ngIf="articleForm.get('categoryIds')?.invalid && articleForm.get('categoryIds')?.touched" class="mt-1 text-sm text-red-600">
+          <div *ngIf="articleForm.get('categoryIds')?.errors?.['required']">At least one category is required.</div>
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      
+      <!-- Success Message -->
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+      
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        [disabled]="articleForm.invalid"
+      >
+        Create Article
+      </button>
+      
+    </form>
+  </div>
+</section>
+
+<app-footer></app-footer>

@@ -3,6 +3,7 @@ const router = express.Router();
 
 const userController = require('../controllers/user.controller');
 const categoryController = require('../controllers/category.controller');
+const articleController = require('../controllers/article.controller');
 
 const checkUserExistsMiddleware = require('../middleware/user/checkUserExists.middleware');
 const authMiddleware = require('../middleware/user/auth.middleware')
@@ -26,5 +27,13 @@ router.get('/categories', categoryController.getAllCategories);
 router.get('/categories/:id', categoryController.getCategoryById);
 router.put('/categories/:id', categoryController.updateCategory);
 router.delete('/categories/:id', categoryController.deleteCategory);
+
+/* =========== Article ======== */
+router.post('/articles', articleController.createArticle);
+router.get('/articles', articleController.getAllArticles);
+router.get('/articles/:id', articleController.getArticleById);
+router.put('/articles/:id', articleController.updateArticle);
+router.delete('/articles/:id', articleController.deleteArticle);
+router.get('/category/:categoryId/articles', articleController.getArticlesByCategory);
 
 module.exports = router;

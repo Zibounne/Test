@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<section class="container px-4 mx-auto my-12">
+  <h1 class="mb-8 text-3xl font-extrabold text-center text-gray-800 md:text-left">Articles in {{ category.title }}</h1>
+
+  <div *ngIf="errorMessage" class="mt-4 text-center text-red-600 md:text-left">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="articles.length === 0 && !errorMessage" class="mt-4 text-center md:text-left">
+    <p class="text-gray-500">No articles found for this category.</p>
+  </div>
+
+  <div class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-3">
+    <div *ngFor="let article of articles" class="p-6 transition transform rounded-lg shadow-2xl bg-slate-800 hover:scale-105 hover:shadow-xl">
+      <h2 class="text-xl font-bold text-white">{{ article.title }}</h2>
+      <p class="mt-3 text-sm leading-relaxed text-white">{{ article.description }}</p>
+      <a [routerLink]="['/article', article.id]" class="inline-block mt-4 font-medium text-right text-blue-600 transition hover:text-blue-800">
+        <button class="p-2 bg-white border-2 rounded-md text-slate-800 me-right">
+            Read more
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
