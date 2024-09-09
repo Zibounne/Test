@@ -1,40 +1,46 @@
 <app-header></app-header>
 
-<section id="categorySection1">
-  <div>
+<section id="categoryListSection1">
+  <div id="categoryListHeadSection">
     <h1>Categories</h1>
     <ul>
       <li *ngFor="let category of categories">
-        <!-- Delete Button -->
-        <button (click)="deleteCategory($event, category.id)" class="pr-2 text-red-600 hover:text-red-800">
-          <i class="fa-solid fa-trash-can"></i>
-        </button>
-        <!-- Edit Button -->
-        <button (click)="editCategory(category.id)" class="text-blue-600 hover:text-blue-800 edit-button">
-          <i class="fa-solid fa-edit"></i>
-        </button>
-        <a [routerLink]="['/category', category.title]">
-          <div>
-            <!-- Logo -->
-            <!-- <img [src]="'/pictures/articles/' + category.title + '/' + category.logo" alt="Logo" *ngIf="category.logo"/> -->
-            
-            <!-- Title -->
-            <h2>{{ category.title }}</h2>
+        <div id="categoryListBodySection">
+          <a [routerLink]="['/category', category.title]">
+            <div>
+              <!-- Title -->            
+              <h2>{{ category.title }}</h2>
+            </div>
+            <div>
+              <!-- Description -->
+              <p>{{ category.description }}</p>
+            </div>
+          </a>
 
-            <!-- Description -->
-            <p>{{ category.description }}</p>
-            
+          <!-- Buttons (Delete and Edit) -->
+          <div class="flex space-x-2">
+            <!-- Delete Button -->
+            <button (click)="deleteCategory($event, category.id)" class="pr-4 text-2xl text-red-600 hover:text-red-800">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+
+            <!-- Edit Button -->
+            <button (click)="editCategory(category.id)" class="text-2xl text-blue-600 hover:text-blue-800">
+              <i class="fa-solid fa-edit"></i>
+            </button>
             <!-- Arrow -->
-            <span class="ml-5 text-xl">
-              <i class="fa-solid fa-chevron-right"></i>
-            </span>
+            <a [routerLink]="['/category', category.title]">
+              <span class="ml-5 text-xl text-white">
+                <i class="fa-solid fa-chevron-right"></i>
+              </span>
+            </a>
           </div>
-        </a>
+        </div>
       </li>
     </ul>
   </div>
-  
-  <div id="categorySection1NewCategory" class="my-10 mb-4 text-center">
+
+  <div id="categorySection1NewCategory">
     <a [routerLink]="['/categoryForm']">
       Add New Category
     </a>

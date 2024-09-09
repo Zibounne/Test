@@ -2,21 +2,32 @@
 =              note Test | Front-End                 =
 ======================================================
 
--   categories = [
-    { 
-      id: 1,
-      name: 'Web Development',
-      route: 'webDevelopment',
-      logo: 'articlesWebDevelopmentLogo.svg',
-      description: 'Explore the latest in web development, from front-end programming to back-end technologies. Learn about modern frameworks, responsive techniques, and best practices for creating dynamic, user-friendly websites.'
-    },
-    { id: 2, name: 'Programming Design & User Experience', route: 'programmingDesign&UserExperience' },
-    { id: 3, name: 'Mobile & Web Apps', route: 'mobile&WebApps' },
-    { id: 4, name: 'SEO & Digital Marketing', route: 'Seo&DigitalMarketing' },
-    { id: 5, name: 'Projects & Management', route: 'projects&Management' },
-    { id: 6, name: 'Artificial Intelligence & Machine Learning', route: 'artificialIntelligence&MachineLearning' },
-    { id: 7, name: 'Security & Privacy', route: 'security&Privacy' },
-    { id: 8, name: 'Tech Trends & News', route: 'techTrends&News' }
-  ];
+-   categories :
+
+Web Development
+Explore the latest in web development, from front-end programming to back-end technologies. Learn about modern frameworks, responsive techniques, and best practices for creating dynamic, user-friendly websites.
+
+Programming Design & User Experience
+Explore the latest in programming design and user experience, focusing on creating intuitive, visually appealing, and user-friendly interfaces that enhance functionality and customer satisfaction.
+
+Mobile & Web Apps
+Delve into the world of mobile and web app development, covering best practices, new tools, and innovative trends shaping the future of digital solutions.
+
+SEO & Digital Marketing
+Learn cutting-edge SEO strategies and digital marketing techniques to optimize online visibility, drive traffic, and maximize conversions in today’s competitive digital landscape.
+
+Projects & Management
+Improve your project management skills with insights on effective planning, coordination, and execution to ensure successful project completion across various industries.
+
+Artificial Intelligence & Machine Learning
+Discover breakthroughs in AI and machine learning, from powerful algorithms to practical applications in industries, driving innovation and transforming business landscapes.
+
+Security & Privacy
+Stay informed on the latest security practices and privacy measures, protecting data and systems from cyber threats in an increasingly digital world.
+
+Tech Trends & News
+Stay updated on the latest tech trends, innovations, and industry news, keeping you informed of what’s shaping the future of technology.
+
+- 
 
 ======================================================

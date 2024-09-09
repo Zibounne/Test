@@ -256,41 +256,41 @@ footer p span {
 }
 
 /* ========== Articles ========= */
-#categorySection1 {
+#categoryListSection1 {
   @apply min-h-screen bg-slate-100 px-[20%] py-8;
 }
-#categorySection1 div {
-  @apply container;
-}
-#categorySection1 div h1 {
+#categoryListSection1 #categoryListHeadSection h1 {
   @apply mb-6 text-3xl font-bold text-slate-800;
 }
-#categorySection1 div ul {
+#categoryListSection1 #categoryListHeadSection ul {
   @apply space-y-6;
 }
-#categorySection1 div ul li a {
-  @apply block text-white rounded-lg bg-slate-800 transition-all duration-150 ease-in-out border-x-2 border-b-2 border-t-4 border-slate-950 shadow-2xl;
+#categoryListSection1 #categoryListHeadSection ul li {
+  @apply relative;
 }
-#categorySection1 div ul li a:hover {
-  @apply opacity-90 transition-all duration-150 ease-in-out scale-105;
+#categoryListSection1 #categoryListHeadSection ul li #categoryListBodySection {
+  @apply flex items-center justify-between p-4 transition-all duration-150 ease-in-out border-t-4 border-b-2 rounded-lg shadow-2xl bg-slate-800 border-x-2 border-slate-950;
 }
-#categorySection1 div ul li div {
-  @apply flex items-center justify-between p-4;
+#categoryListSection1 #categoryListHeadSection ul li #categoryListBodySection a {
+  @apply flex-grow text-white;
 }
-#categorySection1 div ul li div img {
-  @apply h-12 mr-4;
+#categoryListSection1 #categoryListHeadSection ul li #categoryListBodySection a div h2 {
+  @apply pb-2 text-xl font-semibold;
 }
-#categorySection1 div ul li div h2 {
-  @apply flex-grow text-xl font-semibold;
+#categoryListSection1 #categoryListHeadSection ul li #categoryListBodySection a div p {
+  @apply pr-4 text-sm text-gray-300;
 }
-#categorySection1 div ul li div p {
-  @apply flex-grow text-sm text-gray-300 w-3/4;
+#categoryListSection1 #categoryListHeadSection ul li #categoryListBodySection:hover {
+  @apply opacity-90 scale-105;
 }
-#categorySection1 #categorySection1NewCategory a {
-  @apply duration-150 ease-in-out shadow-2xl w-[50%] block m-auto px-4 py-2 text-2xl text-white transition-colors rounded-md bg-slate-500;
+#categoryListSection1 #categorySection1NewCategory {
+  @apply my-10 mb-4 text-center;
 }
-#categorySection1 #categorySection1NewCategory a:hover {
-  @apply opacity-90 transition-all duration-150 ease-in-out scale-105 bg-slate-600;
+#categoryListSection1 #categorySection1NewCategory a {
+  @apply block w-[50%] mx-auto px-4 py-2 text-2xl text-white bg-slate-500 rounded-md shadow-2xl transition-all duration-150 ease-in-out;
+}
+#categoryListSection1 #categorySection1NewCategory a:hover {
+  @apply opacity-90 scale-105;
 }
 
 #categoryFormSection1Arrow {
