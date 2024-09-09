@@ -1,64 +1,61 @@
 <app-header></app-header>
 
-<section id="categoryFormSection" class="relative flex items-center justify-center min-h-screen bg-gray-100">
-  <a href="/categoryList" id="categoryFormSectionArrow" class="absolute p-2 transition duration-300 bg-white border border-gray-300 rounded-full top-5 left-5 hover:bg-gray-200 hover:border-gray-200">
-    <i class="fa-solid fa-arrow-left"></i>
-  </a>
+<a href="/categoryList" id="categoryFormSection1Arrow">
+  <i class="fa-solid fa-arrow-left"></i>
+</a>
 
-  <div id="categoryFormSectionContainer" class="w-full max-w-md p-8 bg-white rounded-lg shadow-2xl">
-    <h1 class="mb-6 text-2xl font-bold">Create New Category</h1>
-    
+<section id="categoryFormSection1">
+  <h1>Create New Category</h1>
+  <div id="categoryFormContentSection1">
     <form [formGroup]="categoryForm" (ngSubmit)="submitCategory()">
-      
       <!-- Title Field -->
-      <div class="mb-4">
-        <label for="title" class="block mb-2 text-lg font-medium">Title</label>
+      <div>
+        <label for="title">Title</label>
         <input
           id="title"
           formControlName="title"
           type="text"
-          class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-slate-500"
+          class="focus:outline-none focus:border-slate-500"
           placeholder="Enter category title"
         />
-        <div *ngIf="categoryForm.get('title')?.invalid && categoryForm.get('title')?.touched" class="mt-1 text-sm text-red-500">
+        <div *ngIf="categoryForm.get('title')?.invalid && categoryForm.get('title')?.touched">
           <div *ngIf="categoryForm.get('title')?.errors?.['required']">Title is required.</div>
           <div *ngIf="categoryForm.get('title')?.errors?.['minlength']">Title must be at least 3 characters long.</div>
         </div>
       </div>
       
       <!-- Description Field -->
-      <div class="mb-4">
-        <label for="description" class="block mb-2 text-lg font-medium">Description</label>
+      <div>
+        <label for="description">Description</label>
         <textarea
           id="description"
           formControlName="description"
           rows="4"
-          class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-slate-500"
+          class="focus:outline-none focus:border-slate-500"
           placeholder="Enter category description"
         ></textarea>
-        <div *ngIf="categoryForm.get('description')?.invalid && categoryForm.get('description')?.touched" class="mt-1 text-sm text-red-500">
+        <div *ngIf="categoryForm.get('description')?.invalid && categoryForm.get('description')?.touched">
           <div *ngIf="categoryForm.get('description')?.errors?.['required']">Description is required.</div>
           <div *ngIf="categoryForm.get('description')?.errors?.['minlength']">Description must be at least 50 characters long.</div>
         </div>
       </div>
       
       <!-- Error Message -->
-      <div *ngIf="errorMessage" class="mb-4 font-bold text-red-500">
+      <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
       </div>
       
       <!-- Success Message -->
-      <div *ngIf="successMessage" class="mb-4 font-bold text-green-500">
+      <div *ngIf="successMessage" class="success-message">
         {{ successMessage }}
       </div>
       
       <!-- Submit Button -->
       <button
         type="submit"
-        class="w-full px-4 py-2 text-white transition duration-200 rounded bg-slate-500 hover:bg-slate-600 disabled:opacity-70"
         [disabled]="categoryForm.invalid"
       >
-        Create Category
+        Create category
       </button>
       
     </form>

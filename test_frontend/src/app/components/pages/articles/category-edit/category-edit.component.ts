@@ -40,7 +40,7 @@ export class CategoryEditComponent implements OnInit {
     private categoryService: CategoryService,
     private fb: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute // Inject ActivatedRoute
+    private route: ActivatedRoute
   )
   {
     this.categoryForm = this.fb.group
@@ -55,8 +55,8 @@ export class CategoryEditComponent implements OnInit {
   // Init
   ngOnInit(): void {
     this.titleService.setTitle("Blog | Category Edit");
-    this.categoryId = this.route.snapshot.paramMap.get('id')!; // Get categoryId from route params
-    this.loadCategory(); // Load category details
+    this.categoryId = this.route.snapshot.paramMap.get('id')!;
+    this.loadCategory();
   }
 
   // Load category
@@ -88,7 +88,11 @@ export class CategoryEditComponent implements OnInit {
     this.categoryService.updateCategory(this.categoryId, payloadEdit).subscribe({
       next: () => {
         this.successMessage = 'Category updated successfully.';
-        this.router.navigate(['/categories']);
+        this.errorMessage = null;
+        this.categoryForm.reset();
+        setTimeout(() => {
+          this.router.navigate(['/categoryList']);
+        }, 2000);
       },
       error: () => this.errorMessage = 'Failed to update category.'
     });

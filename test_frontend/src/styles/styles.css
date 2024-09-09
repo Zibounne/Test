@@ -291,4 +291,128 @@ footer p span {
 }
 #categorySection1 #categorySection1NewCategory a:hover {
   @apply opacity-90 transition-all duration-150 ease-in-out scale-105 bg-slate-600;
+}
+
+#categoryFormSection1Arrow {
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+  z-index: 10;
+}
+#categoryFormSection1Arrow i {
+  @apply border p-2 rounded-full border-gray-300 bg-white shadow-lg transition-all duration-300 text-slate-600;
+}
+#categoryFormSection1Arrow i:hover {
+  @apply bg-gray-200 border-gray-200 text-slate-700;
+}
+
+#categoryFormSection1 {
+  @apply min-h-screen flex items-center justify-center bg-gray-100 relative flex-col pb-[10%];
+}
+#categoryFormSection1 h1 {
+  @apply text-3xl font-bold py-7 pb-6;
+}
+#categoryFormSection1 #categoryFormContentSection1 {
+  @apply w-full max-w-md p-8 bg-white rounded-lg shadow-2xl;
+}
+#categoryFormSection1 #categoryFormContentSection1 form div {
+  @apply mb-4;
+}
+#categoryFormSection1 #categoryFormContentSection1 form div label {
+  @apply block mb-2 text-lg font-medium;
+}
+#categoryFormSection1 #categoryFormContentSection1 form div input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded;
+}
+#categoryFormSection1 #categoryFormContentSection1 form div textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded;
+}
+#categoryFormSection1 #categoryFormContentSection1 form div div {
+  @apply mt-1 text-sm text-red-500;
+}
+#categoryFormSection1 #categoryFormContentSection1 button {
+  @apply w-full bg-slate-500 text-white py-2 px-4 rounded transition duration-200;
+}
+#categoryFormSection1 #categoryFormContentSection1 button:hover {
+  @apply bg-slate-600 transition duration-200;
+}
+#categoryFormSection1 #categoryFormContentSection1 button:disabled {
+  filter: brightness(0.7);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  @apply w-full bg-slate-500 text-white py-2 px-4 rounded transition duration-200 transform scale-95 opacity-70 cursor-not-allowed;
+}
+#categoryFormSection1 #categoryFormContentSection1 button:disabled:hover {
+  filter: brightness(0.7);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  @apply w-full bg-slate-500 text-white py-2 px-4 rounded transition duration-200 transform scale-95 opacity-70 cursor-not-allowed;
+}
+
+.success-message {
+  @apply text-green-500 mt-2 font-bold;
+}
+
+.error-message {
+  @apply text-red-500 mt-2 font-bold;
+}
+
+#categoryEditSection1Arrow {
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+  z-index: 10;
+}
+#categoryEditSection1Arrow i {
+  @apply border p-2 rounded-full border-gray-300 bg-white shadow-lg transition-all duration-300 text-slate-600;
+}
+#categoryEditSection1Arrow i:hover {
+  @apply bg-gray-200 border-gray-200 text-slate-700;
+}
+
+#categoryEditSection1 {
+  @apply min-h-screen flex items-center justify-center bg-gray-100 relative flex-col pb-[10%];
+}
+#categoryEditSection1 h1 {
+  @apply text-3xl font-bold py-7 pb-6;
+}
+#categoryEditSection1 #categoryEditContentSection1 {
+  @apply w-full max-w-md p-8 bg-white rounded-lg shadow-2xl;
+}
+#categoryEditSection1 #categoryEditContentSection1 form div {
+  @apply mb-4;
+}
+#categoryEditSection1 #categoryEditContentSection1 form div label {
+  @apply block mb-2 text-lg font-medium;
+}
+#categoryEditSection1 #categoryEditContentSection1 form div input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded;
+}
+#categoryEditSection1 #categoryEditContentSection1 form div textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded;
+}
+#categoryEditSection1 #categoryEditContentSection1 form div div {
+  @apply mt-1 text-sm text-red-500;
+}
+#categoryEditSection1 #categoryEditContentSection1 button {
+  @apply w-full bg-slate-500 text-white py-2 px-4 rounded transition duration-200;
+}
+#categoryEditSection1 #categoryEditContentSection1 button:hover {
+  @apply bg-slate-600 transition duration-200;
+}
+#categoryEditSection1 #categoryEditContentSection1 button:disabled {
+  filter: brightness(0.7);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  @apply w-full bg-slate-500 text-white py-2 px-4 rounded transition duration-200 transform scale-95 opacity-70 cursor-not-allowed;
+}
+#categoryEditSection1 #categoryEditContentSection1 button:disabled:hover {
+  filter: brightness(0.7);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  @apply w-full bg-slate-500 text-white py-2 px-4 rounded transition duration-200 transform scale-95 opacity-70 cursor-not-allowed;
+}
+
+.success-message {
+  @apply text-green-500 mt-2 font-bold;
+}
+
+.error-message {
+  @apply text-red-500 mt-2 font-bold;
 }/*# sourceMappingURL=styles.css.map */
