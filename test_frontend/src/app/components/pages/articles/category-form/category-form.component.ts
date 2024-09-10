@@ -58,7 +58,7 @@ export class CategoryFormComponent {
       next: (response) => {
         this.successMessage = "Category created successfully!";
         this.errorMessage = null;
-        setTimeout(() => this.router.navigate(['/categoryList']), 2000);
+        setTimeout(() => this.router.navigate(['/categories']), 2000);
       },
       error: (error) => {
         this.errorMessage = "Failed to create category. Please try again.";

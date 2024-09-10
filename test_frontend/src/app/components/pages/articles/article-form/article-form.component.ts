@@ -86,7 +86,7 @@ export class ArticleFormComponent implements OnInit {
       next: () => {
         this.successMessage = "Article created successfully!";
         this.errorMessage = null;
-        setTimeout(() => this.router.navigate(['/categoryList']), 2000);
+        setTimeout(() => this.router.navigate(['/categories']), 2000);
       },
       error: () => {
         this.errorMessage = "Failed to create article. Please try again.";

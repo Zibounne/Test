@@ -6,7 +6,7 @@
     <ul>
       <li *ngFor="let category of categories">
         <div id="categoryListBodySection">
-          <a [routerLink]="['/category', category.id]">
+          <a [routerLink]="getCategoryLink(category)">
             <div>
               <!-- Title -->            
               <h2>{{ category.title }}</h2>
@@ -29,7 +29,7 @@
               <i class="fa-solid fa-edit"></i>
             </button>
             <!-- Arrow -->
-            <a [routerLink]="['/category', category.id]">
+            <a [routerLink]="getCategoryLink(category)">
               <span class="ml-5 text-xl text-white">
                 <i class="fa-solid fa-chevron-right"></i>
               </span>

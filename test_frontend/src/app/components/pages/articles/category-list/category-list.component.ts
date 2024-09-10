@@ -63,6 +63,7 @@ export class CategoryListComponent implements OnInit {
     });
   }
 
+  // Delete category
   deleteCategory(event: MouseEvent, categoryId: string): void {
     event.stopPropagation();
 
@@ -79,8 +80,22 @@ export class CategoryListComponent implements OnInit {
     }
   }
 
+  // Edit category
   editCategory(categoryId: string): void {
     this.router.navigate(['/categoryEdit', categoryId]);
   }
 
+  // Slug
+  slug(text: string): string {
+    return text.replace(/\s+/g, '-').toLowerCase();
+  }
+  
+  // Slug category
+  getCategoryLink(category: any): string[] {
+    return [
+      '/categories', 
+      `${category.id}-${this.slug(category.title)}`
+    ];
+  }
+  
 }

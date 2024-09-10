@@ -42,7 +42,8 @@ export class ArticleListComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle("Blog | Articles");
     this.route.params.subscribe(params => {
-      this.categoryId = +params['id'];
+      const idAndSlug = params['id'];
+      this.categoryId = +idAndSlug.split('-')[0];
       this.loadCategory();
       this.loadArticles();
     });
@@ -70,6 +71,21 @@ export class ArticleListComponent implements OnInit {
         this.errorMessage = "Failed to load articles. Please try again.";
       }
     });
+  }
+
+  // Slug
+  slug(text: string): string {
+    return text.replace(/\s+/g, '-').toLowerCase();
+  }
+
+  // Slug category & article
+  getArticleLink(categories: any, article: any): string[] {
+    return [
+      '/categories', 
+      `${categories.id}-${this.slug(categories.title)}`, 
+      'article', 
+      `${article.id}-${this.slug(article.title)}`
+    ];
   }
 
 }

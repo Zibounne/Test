@@ -28,11 +28,11 @@ export const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuardService] },
     { path: 'signOut', component: SignOutComponent, canActivate: [AuthGuardService] },
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
-    { path: 'categoryList', component: CategoryListComponent, canActivate: [AuthGuardService] },
+    { path: 'categories', component: CategoryListComponent, canActivate: [AuthGuardService] },
     { path: 'categoryForm', component: CategoryFormComponent, canActivate: [AuthGuardService] },
     { path: 'categoryEdit/:id', component: CategoryEditComponent, canActivate: [AuthGuardService] },
     { path: 'articleForm', component: ArticleFormComponent, canActivate: [AuthGuardService] },
-    { path: 'category/:id', component: ArticleListComponent },
+    { path: 'categories/:id', component: ArticleListComponent },
 
     // Fallback route
     { path: '**', component: HomeComponent },

@@ -91,7 +91,7 @@ export class CategoryEditComponent implements OnInit {
         this.errorMessage = null;
         this.categoryForm.reset();
         setTimeout(() => {
-          this.router.navigate(['/categoryList']);
+          this.router.navigate(['/categories']);
         }, 2000);
       },
       error: () => this.errorMessage = 'Failed to update category.'
