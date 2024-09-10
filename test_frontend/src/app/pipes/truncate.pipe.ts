@@ -13,5 +13,5 @@ export class TruncatePipe implements PipeTransform {
     if (words.length <= maxWords) return value;
     return words.slice(0, maxWords).join(' ') + '...';
   }
-  
+
 }

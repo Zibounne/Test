@@ -303,10 +303,10 @@ footer p span {
   z-index: 10;
 }
 #categoryFormSection1Arrow i {
-  @apply border p-2 rounded-full border-gray-300 bg-white shadow-lg transition-all duration-300 text-slate-600;
+  @apply border p-2 rounded-full border-slate-600 bg-slate-600 shadow-lg transition-all duration-300 text-white;
 }
 #categoryFormSection1Arrow i:hover {
-  @apply bg-gray-200 border-gray-200 text-slate-700;
+  @apply bg-slate-500 border-slate-500 text-white;
 }
 
 #categoryFormSection1 {
@@ -365,10 +365,10 @@ footer p span {
   z-index: 10;
 }
 #categoryEditSection1Arrow i {
-  @apply border p-2 rounded-full border-gray-300 bg-white shadow-lg transition-all duration-300 text-slate-600;
+  @apply border p-2 rounded-full border-slate-600 bg-slate-600 shadow-lg transition-all duration-300 text-white;
 }
 #categoryEditSection1Arrow i:hover {
-  @apply bg-gray-200 border-gray-200 text-slate-700;
+  @apply bg-slate-500 border-slate-500 text-white;
 }
 
 #categoryEditSection1 {
@@ -420,6 +420,27 @@ footer p span {
   @apply text-red-500 mt-2 font-bold;
 }
 
+#articleListSection1Arrow {
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+  z-index: 10;
+}
+#articleListSection1Arrow i {
+  @apply border p-2 rounded-full border-slate-600 bg-slate-600 shadow-lg transition-all duration-300 text-white;
+}
+#articleListSection1Arrow i:hover {
+  @apply bg-slate-500 border-slate-500 text-white;
+}
+
+.success-message {
+  @apply text-green-500 mt-2 font-bold;
+}
+
+.error-message {
+  @apply text-red-500 mt-2 font-bold;
+}
+
 #articleFormSection1Arrow {
   position: absolute;
   top: 5rem;
@@ -427,10 +448,10 @@ footer p span {
   z-index: 10;
 }
 #articleFormSection1Arrow i {
-  @apply border p-2 rounded-full border-gray-300 bg-white shadow-lg transition-all duration-300 text-slate-600;
+  @apply border p-2 rounded-full border-slate-600 bg-slate-600 shadow-lg transition-all duration-300 text-white;
 }
 #articleFormSection1Arrow i:hover {
-  @apply bg-gray-200 border-gray-200 text-slate-700;
+  @apply bg-slate-500 border-slate-500 text-white;
 }
 
 #articleFormSection1 {
