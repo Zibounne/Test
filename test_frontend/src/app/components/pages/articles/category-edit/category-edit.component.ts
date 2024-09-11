@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { CategoryService } from '../../../../services/category/category.service';
 
@@ -17,6 +17,8 @@ import { FooterComponent } from '../../../partials/footer/footer.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterLink,
+    RouterLinkActive,
     HeaderComponent,
     FooterComponent
   ],

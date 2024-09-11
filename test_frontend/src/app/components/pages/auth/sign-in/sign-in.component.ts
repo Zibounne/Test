@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { FooterComponent } from '../../../partials/footer/footer.component';
 import { HeaderComponent } from '../../../partials/header/header.component';
@@ -17,6 +17,8 @@ import { SignInPayload } from '../../../../interfaces/user/signIn/sign-in-payloa
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterLink,
+    RouterLinkActive,
     HeaderComponent,
     FooterComponent
   ],

@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<section class="container px-4 py-12 mx-auto">
+    <a [routerLink]="['/categories', category.id + '-' + category.title]" id="articleListSection1Arrow">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <div class="mt-8">
+        <h1 class="mb-6 text-4xl font-extrabold text-center text-gray-900">{{ article.title }}</h1>
+
+        <div *ngIf="errorMessage" class="relative px-4 py-3 mb-6 text-red-700 bg-red-100 border border-red-500 rounded">
+            <strong class="font-bold">Error:</strong>
+            <span class="block sm:inline">{{ errorMessage }}</span>
+        </div>
+
+        <div *ngIf="!errorMessage" class="px-6 py-4 border border-gray-300 rounded-lg shadow-lg bg-slate-200">
+            <div [innerHTML]="article.description"></div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

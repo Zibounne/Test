@@ -35,4 +35,9 @@ export class ArticleService {
     return this.http.get<any>(`${this.apiUrl}/categories/${categoryId}`);
   }
 
+  // Article detail by ID
+  getArticleById(articleId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/articles/${articleId}`);
+  }
+
 }

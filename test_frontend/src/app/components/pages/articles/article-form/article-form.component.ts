@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { HeaderComponent } from '../../../partials/header/header.component';
 import { FooterComponent } from '../../../partials/footer/footer.component';
@@ -10,7 +10,9 @@ import { FooterComponent } from '../../../partials/footer/footer.component';
 import { ArticleService } from '../../../../services/article/article.service';
 import { CategoryService } from '../../../../services/category/category.service';
 
-import { CategoryListPayload } from '../../../../interfaces/category/category-list/category-list';
+import { EditorModule } from '@tinymce/tinymce-angular';
+
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-article-form',
@@ -18,8 +20,11 @@ import { CategoryListPayload } from '../../../../interfaces/category/category-li
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterLink,
+    RouterLinkActive,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    EditorModule
   ],
   templateUrl: './article-form.component.html',
 })
@@ -31,6 +36,7 @@ export class ArticleFormComponent implements OnInit {
   selectedCategories: Set<number> = new Set<number>();
   errorMessage: string | null = null;
   successMessage: string | null = null;
+  tinymceApiKey = environment.tinymceApiKey;
 
   constructor(
     private titleService: Title,
@@ -94,5 +100,4 @@ export class ArticleFormComponent implements OnInit {
       }
     });
   }
-
 }

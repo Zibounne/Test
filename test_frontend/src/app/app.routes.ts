@@ -14,25 +14,38 @@ import { CategoryFormComponent } from './components/pages/articles/category-form
 import { CategoryEditComponent } from './components/pages/articles/category-edit/category-edit.component';
 import { ArticleFormComponent } from './components/pages/articles/article-form/article-form.component';
 import { ArticleListComponent } from './components/pages/articles/article-list/article-list.component';
+import { ArticleShowComponent } from './components/pages/articles/article-show/article-show.component';
 
 export const routes: Routes = [
-    // Public routes
+    ///////////////////////// Public routes /////////////////////////
+
     
-    
-    // Non-authenticated routes
+    //////////////////// Non-authenticated routes ///////////////////
+
+    // Welcome
     { path: 'welcome', component: WelcomeComponent, canActivate: [NoAuthGuardService] },
+    // Sign
     { path: 'signIn', component: SignInComponent, canActivate: [NoAuthGuardService] },
     { path: 'signUp', component: SignUpComponent, canActivate: [NoAuthGuardService] },
 
-    // Authenticated routes
+    //////////////////// Authenticated routes ///////////////////
+
+    // Home
     { path: '', component: HomeComponent, canActivate: [AuthGuardService] },
+    // Sign
     { path: 'signOut', component: SignOutComponent, canActivate: [AuthGuardService] },
+    // Profile
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
+    // Categories
     { path: 'categories', component: CategoryListComponent, canActivate: [AuthGuardService] },
     { path: 'categoryForm', component: CategoryFormComponent, canActivate: [AuthGuardService] },
     { path: 'categoryEdit/:id', component: CategoryEditComponent, canActivate: [AuthGuardService] },
+    { path: 'categories/:id', component: ArticleListComponent, canActivate: [AuthGuardService] },
+    // Articles
     { path: 'articleForm', component: ArticleFormComponent, canActivate: [AuthGuardService] },
-    { path: 'categories/:id', component: ArticleListComponent },
+    { path: 'categories/:categoryId-:categorySlug/article/:articleId-:articleSlug', component: ArticleShowComponent, canActivate: [AuthGuardService] },
+    
+    ///////////////////////// Other routes /////////////////////////
 
     // Fallback route
     { path: '**', component: HomeComponent },

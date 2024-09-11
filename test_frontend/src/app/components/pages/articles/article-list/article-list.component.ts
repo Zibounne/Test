@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ArticleService } from '../../../../services/article/article.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -17,6 +17,7 @@ import { TruncatePipe } from '../../../../pipes/truncate.pipe';
     CommonModule,
     ReactiveFormsModule,
     RouterLink,
+    RouterLinkActive,
     HeaderComponent,
     FooterComponent,
     TruncatePipe
