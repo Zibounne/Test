@@ -40,4 +40,14 @@ export class ArticleService {
     return this.http.get<any>(`${this.apiUrl}/articles/${articleId}`);
   }
 
+  // Article delete
+  deleteArticleById(articleId: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/articles/${articleId}`);
+  }
+
+  // Update article
+  updateArticle(articleId: number, articleData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/articles/${articleId}`, articleData);
+  }
+
 }

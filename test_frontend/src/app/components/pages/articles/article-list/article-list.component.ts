@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../../partials/header/header.component';
 import { FooterComponent } from '../../../partials/footer/footer.component';
 
-import { TruncatePipe } from '../../../../pipes/truncate.pipe';
+import { TruncatePipe } from '../../../../pipes/truncate/truncate.pipe';
 
 @Component({
   selector: 'app-article-list',

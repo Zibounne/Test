@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { HeaderComponent } from '../../../partials/header/header.component';
 import { FooterComponent } from '../../../partials/footer/footer.component';
 
 import { ArticleService } from '../../../../services/article/article.service';
+
+import { EditorModule } from '@tinymce/tinymce-angular';
+
+import { environment } from '../../../../../environments/environment';
+
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,6 +21,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     RouterLink,
     RouterLinkActive,
+    ReactiveFormsModule,
+    EditorModule,
     HeaderComponent,
     FooterComponent
   ],
@@ -24,21 +33,29 @@ export class ArticleShowComponent implements OnInit {
   article: any = {};
   category: any = {};
   errorMessage: string | null = null;
+  successMessage: string | null = null;
+  editingMode: boolean = false;
+  articleForm!: FormGroup;
+  tinymceApiKey = environment.tinymceApiKey;
+  safeDescription: SafeHtml = '';
 
   constructor(
     private route: ActivatedRoute,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const categoryIdString = params['categoryId-:categorySlug'];
       const articleIdString = params['articleId-:articleSlug'];
-  
+
       if (categoryIdString && articleIdString) {
         const categoryId = parseInt(categoryIdString.split('-')[0], 10);
-        const articleId = parseInt(articleIdString.split('-')[0], 10);  
-  
+        const articleId = parseInt(articleIdString.split('-')[0], 10);
+
         if (!isNaN(categoryId) && !isNaN(articleId)) {
           this.loadArticle(articleId);
           this.loadCategory(categoryId);
@@ -48,14 +65,24 @@ export class ArticleShowComponent implements OnInit {
       } else {
         this.errorMessage = "Category or article ID is missing in route.";
       }
+
+      this.articleForm = this.formBuilder.group({
+        title: ['', [Validators.required]],
+        description: ['', [Validators.required, Validators.minLength(100)]],
+      });
     });
-  }  
+  }
 
   loadArticle(articleId: number): void {
     this.articleService.getArticleById(articleId).subscribe({
       next: (response) => {
         this.article = response;
-        console.log('Article Loaded:', this.article);
+        this.safeDescription = this.sanitizer.bypassSecurityTrustHtml(response.description);
+
+        this.articleForm.patchValue({
+          title: this.article.title,
+          description: this.article.description
+        });
       },
       error: (error) => {
         this.errorMessage = "Failed to load article. Please try again.";
@@ -63,7 +90,7 @@ export class ArticleShowComponent implements OnInit {
       }
     });
   }
-  
+
   loadCategory(categoryId: number): void {
     this.articleService.getCategoryById(categoryId).subscribe({
       next: (response) => {
@@ -75,6 +102,50 @@ export class ArticleShowComponent implements OnInit {
         console.error('Error loading category:', error);
       }
     });
-  }  
-  
+  }
+
+  deleteArticle(): void {
+    if (confirm("Are you sure you want to delete this article?")) {
+      this.articleService.deleteArticleById(this.article.id).subscribe({
+        next: () => {
+          console.log('Article deleted successfully');
+          this.router.navigate(['/categories', this.category.id + '-' + this.category.title]);
+        },
+        error: (error) => {
+          this.errorMessage = "Failed to delete the article. Please try again.";
+          console.error('Error deleting article:', error);
+        }
+      });
+    }
+  }
+
+  editArticle(): void {
+    this.editingMode = true;
+  }
+
+  updateArticle(): void {
+    if (this.articleForm.valid) {
+      const updatedArticle = this.articleForm.value;
+      this.articleService.updateArticle(this.article.id, updatedArticle).subscribe({
+        next: () => {
+          this.successMessage = "Article edited successfully !";
+          this.errorMessage = null;
+
+          setTimeout(() => {
+            this.loadArticle(this.article.id);
+            this.successMessage = null;
+            this.editingMode = false;
+          }, 2000);
+        },
+        error: (error) => {
+          this.errorMessage = "Failed to update the article. Please try again.";
+          console.error('Error updating article:', error);
+        }
+      });
+    }
+  }
+
+  cancelEdit(): void {
+    this.editingMode = false;
+  }
 }

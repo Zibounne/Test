@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==================== Tailwind ==================== */
 @tailwind base;
 @tailwind components;
@@ -314,7 +315,7 @@ footer p span {
 }
 
 #categoryFormSection1 {
-  @apply min-h-screen flex items-center justify-center bg-gray-100 relative flex-col pb-[10%];
+  @apply min-h-screen flex items-center justify-center relative flex-col pb-[10%];
 }
 #categoryFormSection1 h1 {
   @apply text-3xl font-bold py-7 pb-6;
@@ -376,7 +377,7 @@ footer p span {
 }
 
 #categoryEditSection1 {
-  @apply min-h-screen flex items-center justify-center bg-gray-100 relative flex-col pb-[10%];
+  @apply min-h-screen flex items-center justify-center relative flex-col pb-[10%];
 }
 #categoryEditSection1 h1 {
   @apply text-3xl font-bold py-7 pb-6;
@@ -459,7 +460,7 @@ footer p span {
 }
 
 #articleFormSection1 {
-  @apply min-h-screen flex items-center justify-center bg-gray-100 relative flex-col pt-[5%] pb-[5%];
+  @apply min-h-screen flex items-center justify-center relative flex-col pt-[5%] pb-[5%];
 }
 #articleFormSection1 h1 {
   @apply mb-8 text-4xl font-semibold text-center;
@@ -500,6 +501,110 @@ footer p span {
   filter: brightness(0.7);
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   @apply w-full bg-slate-500 text-white py-2 px-4 rounded transition duration-200 transform scale-95 opacity-70 cursor-not-allowed;
+}
+
+.success-message {
+  @apply text-green-500 mt-2 font-bold;
+}
+
+.error-message {
+  @apply text-red-500 mt-2 font-bold;
+}
+
+.description-styles {
+  /* Styles pour les titres */
+  /* Titres spécifiques */
+  /* Styles pour les paragraphes */
+  /* Styles pour les listes non ordonnées */
+  /* Styles pour les éléments de liste */
+  /* Styles pour les listes ordonnées */
+  /* Styles pour les éléments de liste */
+  /* Styles pour les liens */
+  /* Styles pour les éléments de code */
+  /* Styles pour les citations */
+  /* Styles pour les images */
+  /* Styles pour les tableaux */
+  /* Styles pour les figures */
+  /* Styles pour les formulaires */
+}
+.description-styles h1, .description-styles h2, .description-styles h3, .description-styles h4, .description-styles h5, .description-styles h6 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+.description-styles h1 {
+  @apply text-4xl font-extrabold;
+}
+.description-styles h2 {
+  @apply text-3xl font-bold;
+}
+.description-styles h3 {
+  @apply text-2xl font-semibold;
+}
+.description-styles h4 {
+  @apply text-xl font-semibold;
+}
+.description-styles h5 {
+  @apply text-lg font-medium;
+}
+.description-styles h6 {
+  @apply text-base font-medium;
+}
+.description-styles p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+.description-styles ul {
+  @apply list-disc pl-5 mb-4;
+}
+.description-styles li {
+  margin-bottom: 0.5rem;
+}
+.description-styles ol {
+  @apply list-decimal pl-5 mb-4;
+}
+.description-styles li {
+  margin-bottom: 0.5rem;
+}
+.description-styles a {
+  @apply text-blue-600 underline;
+}
+.description-styles a:hover {
+  @apply text-blue-800 no-underline;
+}
+.description-styles code {
+  @apply bg-gray-100 text-gray-800 rounded p-1 text-sm;
+}
+.description-styles blockquote {
+  @apply border-l-4 border-gray-300 pl-4 mb-4 text-gray-600 italic;
+}
+.description-styles img {
+  @apply max-w-full h-auto mb-4;
+}
+.description-styles table {
+  @apply w-full border-collapse mb-4;
+}
+.description-styles th, .description-styles td {
+  @apply border px-4 py-2 text-left;
+}
+.description-styles th {
+  @apply bg-gray-100 font-semibold;
+}
+.description-styles tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+.description-styles figure {
+  @apply mb-4;
+}
+.description-styles figcaption {
+  @apply text-center text-gray-500 mt-2;
+}
+.description-styles form {
+  @apply mb-6;
+}
+.description-styles input, .description-styles textarea, .description-styles button {
+  @apply border rounded px-4 py-2;
 }
 
 .success-message {
