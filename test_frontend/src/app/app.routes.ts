@@ -28,7 +28,7 @@ export const routes: Routes = [
     { path: 'signIn', component: SignInComponent, canActivate: [NoAuthGuardService] },
     { path: 'signUp', component: SignUpComponent, canActivate: [NoAuthGuardService] },
 
-    //////////////////// Authenticated routes ///////////////////
+    //////////////////// Authenticated routes ///////////////////////
 
     // Home
     { path: '', component: HomeComponent, canActivate: [AuthGuardService] },
@@ -45,7 +45,7 @@ export const routes: Routes = [
     { path: 'articleForm', component: ArticleFormComponent, canActivate: [AuthGuardService] },
     { path: 'categories/:categoryId-:categorySlug/article/:articleId-:articleSlug', component: ArticleShowComponent, canActivate: [AuthGuardService] },
     
-    ///////////////////////// Other routes /////////////////////////
+    ///////////////////////// Other routes //////////////////////////
 
     // Fallback route
     { path: '**', component: HomeComponent },

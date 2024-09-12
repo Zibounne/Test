@@ -6,7 +6,7 @@ const categoryController = require('../controllers/category.controller');
 const articleController = require('../controllers/article.controller');
 
 const checkUserExistsMiddleware = require('../middleware/user/checkUserExists.middleware');
-const authMiddleware = require('../middleware/user/auth.middleware')
+const { authenticateToken } = require('../middleware/user/auth.middleware');
 
 ////////////////////////// Route //////////////////////////
 
@@ -16,9 +16,12 @@ router.post('/user/signUp', checkUserExistsMiddleware, userController.signUp);
 router.post('/user/signIn', userController.signIn);
 router.post('/user/signOut', userController.signOut);
 
+// Route pour rafraîchir le token
+router.post('/user/token', userController.refreshToken);
+
 /* ========== Profile ========= */
 
-router.get('/user/profile', authMiddleware, userController.getProfile);
+router.get('/user/profile', authenticateToken, userController.getProfile);
 
 /* ========== Category ======== */
 

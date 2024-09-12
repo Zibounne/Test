@@ -40,13 +40,16 @@
               <span *ngIf="signUpForm.errors?.['notMatching']">Passwords do not match</span>
             </div>
         </div>
-        <div>
+        <div class="flex">
+          <div>
             <label for="firstname">Firstname</label>
             <input type="text" id="firstname" formControlName="firstname" placeholder="firstname"/>
           </div>
-        <div>
-            <label for="lastname">Lastname</label>
-            <input type="text" id="lastname" formControlName="lastname" placeholder="lastname"/>
+          <div class="w-[5%]"></div>
+          <div>
+              <label for="lastname">Lastname</label>
+              <input type="text" id="lastname" formControlName="lastname" placeholder="lastname"/>
+          </div>
         </div>
         <div *ngIf="errorMessage" class="font-bold error-message">{{ errorMessage }}</div>
         <div *ngIf="successMessage" class="font-bold success-message">{{ successMessage }}</div>
